@@ -69,6 +69,8 @@ class BaseOptions:
     for k, v in data.items():
       if v is None:
         continue
+      if isinstance(v, list) and len(v) == 0:
+        continue
       if isinstance(v, Enum):
         result[k] = v.value
       elif isinstance(v, list) and v and isinstance(v[0], Enum):
