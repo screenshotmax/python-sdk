@@ -1,4 +1,4 @@
-from typing import Any, Dict, Tuple
+from typing import Any, Dict, Optional, Tuple
 from ..client import APIClient
 from ..options import ScrapeOptions
 
@@ -8,7 +8,7 @@ class ScrapeService:
 
   def __init__(self, client: APIClient) -> None:
     self.client = client
-    self._options: ScrapeOptions | None = None
+    self._options: Optional[ScrapeOptions] = None
 
   def set_options(self, options: ScrapeOptions) -> "ScrapeService":
     self._options = options

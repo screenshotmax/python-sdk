@@ -1,4 +1,4 @@
-from typing import Any, Dict, Tuple
+from typing import Any, Dict, Optional, Tuple
 from ..client import APIClient
 from ..options import ScreenshotOptions
 
@@ -8,7 +8,7 @@ class ScreenshotService:
 
   def __init__(self, client: APIClient) -> None:
     self.client = client
-    self._options: ScreenshotOptions | None = None
+    self._options: Optional[ScreenshotOptions] = None
     self._request_kwargs = {
       "stream": True
     }

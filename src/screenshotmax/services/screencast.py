@@ -1,4 +1,4 @@
-from typing import Any, Dict, Tuple
+from typing import Any, Dict, Optional, Tuple
 from ..client import APIClient
 from ..options import ScreencastOptions
 
@@ -8,7 +8,7 @@ class ScreencastService:
 
   def __init__(self, client: APIClient) -> None:
     self.client = client
-    self._options: ScreencastOptions | None = None
+    self._options: Optional[ScreencastOptions] = None
     self._request_kwargs = {
       "stream": True
     }
