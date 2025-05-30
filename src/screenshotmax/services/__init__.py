@@ -15,5 +15,3 @@ __all__ = [
   "UsageService",
   "DeviceService",
 ]
-python_sdk/services/device.py
-Nouveau

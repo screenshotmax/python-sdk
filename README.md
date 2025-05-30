@@ -1,7 +1,7 @@
 # ScreenshotMAX Python SDK
 
-[![build](https://github.com/screenshotmax/python-sdk/actions/workflows/build.yaml/badge.svg)](https://github.com/screenshotmax/python-sdk/actions/workflows/build.yaml)
-[![test](https://github.com/screenshotmax/python-sdk/actions/workflows/test.yaml/badge.svg)](https://github.com/screenshotmax/python-sdk/actions/workflows/test.yaml)
+[![build](https://github.com/screenshotmax/python-sdk/actions/workflows/build.yml/badge.svg)](https://github.com/screenshotmax/python-sdk/actions/workflows/build.yml)
+[![test](https://github.com/screenshotmax/python-sdk/actions/workflows/test.yml/badge.svg)](https://github.com/screenshotmax/python-sdk/actions/workflows/test.yml)
 
 This is the official Python SDK for the [ScreenshotMAX API](https://screenshotmax.com/).
 
