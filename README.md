@@ -1,5 +1,6 @@
 # ScreenshotMAX Python SDK
 
+[![build](https://github.com/screenshotmax/python-sdk/actions/workflows/build.yml/badge.svg)](https://github.com/screenshotmax/python-sdk/actions/workflows/build.yml)
 [![test](https://github.com/screenshotmax/python-sdk/actions/workflows/test.yml/badge.svg)](https://github.com/screenshotmax/python-sdk/actions/workflows/test.yml)
 
 This is the official Python SDK for the [ScreenshotMAX API](https://screenshotmax.com/).
@@ -18,19 +19,23 @@ Use the SDK to generate signed or unsigned URLs for screenshots, PDFs, web scrap
 ### Screenshot example
 ```python
 from screenshotmax import SDK
+from screenshotmax.enum import ImageFormat
 from screenshotmax.options import ScreenshotOptions
 
 sdk = SDK("<ACCESS_KEY>", "<SECRET_KEY>")
 
 # set up options
-opts = ScreenshotOptions(url="https://example.com")
-sdk.screenshot.set_options(opts)
+opts = ScreenshotOptions(
+  url="https://example.com",
+  format=ImageFormat.PNG
+)
 
-#// generate URL (https://api.screenshotmax.com/v1/screenshot?url=https%3A%2F%2Fexample.com&image_width=1280&image_height=720&format=png&image_quality=80&access_key=<ACCESS_KEY>&signature=370f5b161bc59eed13b76........1f778635d7fc595dbab12)
+# fetch screenshot (chaining method)
+result, headers = sdk.screenshot.set_options(opts).fetch()
+
+# optionnaly: generate signed URL
+# (https://api.screenshotmax.com/v1/screenshot?url=https%3A%2F%2Fexample.com&format=png&access_key=<ACCESS_KEY>&signature=370f5b161bc59eed13b76........1f778635d7fc595dbab12)
 url = sdk.screenshot.get_url()
-
-# generate screenshot
-result, headers = sdk.screenshot.fetch()
 ```
 
 ### Web scraping example
