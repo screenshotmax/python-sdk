@@ -12,6 +12,11 @@ Get started in minutes. Just [sign up](https://screenshotmax.com) to receive you
 
 The SDK client is synchronized with the latest [ScreenshotMAX API options](https://docs.screenshotmax.com/guides/start/introduction).
 
+## Installation
+```bash
+pip install screenshotmax
+```
+
 ## Usage
 
 Use the SDK to generate signed or unsigned URLs for screenshots, PDFs, web scraping, or animated screenshot—without executing the request. Or fetch and download the result directly. You have full control over when and how each capture runs.
