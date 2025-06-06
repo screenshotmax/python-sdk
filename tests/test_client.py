@@ -51,7 +51,7 @@ class TestAPIClient(unittest.TestCase):
       "/v1/test", {"delay": 2, "full_page": True}
     )
     self.assertIn("delay=2", result)
-    self.assertIn("full_page=True", result)
+    self.assertIn("full_page=true", result)
 
   def test_generate_url_encodes_special_chars(self):
     result = self.client.generate_url("/v1/test", {"query": "a&b=c"})

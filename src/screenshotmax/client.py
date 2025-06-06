@@ -19,7 +19,11 @@ class APIClient:
   def _compute_query(self, obj: Dict[str, Any]) -> str:
     from urllib.parse import urlencode
 
-    filtered = {k: str(v) for k, v in obj.items() if v is not None}
+    filtered = {
+      k: (str(v).lower() if isinstance(v, bool) else str(v))
+      for k, v in obj.items()
+      if v is not None
+    }
     return urlencode(filtered)
 
   def generate_url(self, path: str, params: Optional[Dict[str, Any]] = None) -> str:
